@@ -1,11 +1,17 @@
-import { Avatar, Dropdown, Navbar } from "flowbite-react";
+import {
+  Avatar,
+  DarkThemeToggle,
+  Dropdown,
+  Flowbite,
+  Navbar,
+} from "flowbite-react";
 import React from "react";
 import { Link } from "react-router-dom";
-import logo_light from "../../../../assets/logo/logo-light.png";
+import logo_light from "../../../../assets/logo/logo-dark.png";
 
 const NavBar = () => {
   return (
-    <Navbar className=" bg-transparent" fluid={true} rounded={true}>
+    <Navbar className=" bg-slate-300 bg-opacity-40 dark:bg-slate-300 dark:bg-opacity-10" fluid={true} rounded={true}>
       <Navbar.Brand href="#">
         <img src={logo_light} className="h-9 sm:h-9" alt="Mr Tech Expert" />
       </Navbar.Brand>
@@ -37,21 +43,24 @@ const NavBar = () => {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <Navbar className=" bg-opacity-30 rounded-lg hover:bg-opacity-70">
+        <Navbar className=" bg-opacity-60 dark:bg-slate-300 dark:bg-opacity-60 dark:hover:bg-opacity-90 rounded-lg hover:bg-opacity-100">
           <Link to="/">Home</Link>
         </Navbar>
-        <Navbar className=" bg-opacity-30 rounded-lg hover:bg-opacity-70">
+        <Navbar className=" bg-opacity-60 dark:bg-slate-300 dark:bg-opacity-60 dark:hover:bg-opacity-90 rounded-lg hover:bg-opacity-100">
           <Link to="/courses">Courses</Link>
         </Navbar>
-        <Navbar className=" bg-opacity-30 rounded-lg hover:bg-opacity-70">
+        <Navbar className=" bg-opacity-60 dark:bg-slate-300 dark:bg-opacity-60 dark:hover:bg-opacity-90 rounded-lg hover:bg-opacity-100">
           <Link to="/blogs">Blogs</Link>
         </Navbar>
-        <Navbar className=" bg-opacity-30 rounded-lg hover:bg-opacity-70">
+        <Navbar className=" bg-opacity-60 dark:bg-slate-300 dark:bg-opacity-60 dark:hover:bg-opacity-90 rounded-lg hover:bg-opacity-100">
           <Link to="/about">About</Link>
         </Navbar>
-        <Navbar className=" bg-opacity-30 rounded-lg hover:bg-opacity-70">
+        <Navbar className=" bg-opacity-60 dark:bg-slate-300 dark:bg-opacity-60 dark:hover:bg-opacity-90 rounded-lg hover:bg-opacity-100">
           <Link to="/contact">Contact</Link>
         </Navbar>
+        <Flowbite>
+          <DarkThemeToggle />
+        </Flowbite>
       </Navbar.Collapse>
     </Navbar>
   );
