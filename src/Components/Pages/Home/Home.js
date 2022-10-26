@@ -8,7 +8,7 @@ const Home = () => {
           Welcome to Mr Tech Expert
         </h1>
         <h1 className=" text-orange-500 text-9xl font-bold uppercase mb-8">
-          Smart Technology Institute
+          Smart Technical Institute
         </h1>
         <button className=" bg-orange-500 px-4 py-2 rounded-lg text-white font-medium">
           Read More

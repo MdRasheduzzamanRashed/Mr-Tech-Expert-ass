@@ -86,9 +86,7 @@ const NavBar = () => {
         <Navbar className="bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black">
           <Link to="/about">About</Link>
         </Navbar>
-        <Navbar className="bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black">
-          <Link to="/contact">Contact</Link>
-        </Navbar>
+
         <Flowbite>
           <DarkThemeToggle />
         </Flowbite>
