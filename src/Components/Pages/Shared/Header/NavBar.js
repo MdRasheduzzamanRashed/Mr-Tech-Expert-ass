@@ -8,8 +8,8 @@ import {
 } from "flowbite-react";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import logo_light from "../../../../assets/logo/logo-dark.png";
-import { AuthContext } from './../../../../context/AuthProvider/AuthProvider';
+import logo_light from "../../../../assets/logo/logo.png";
+import { AuthContext } from "./../../../../context/AuthProvider/AuthProvider";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -24,8 +24,13 @@ const NavBar = () => {
       fluid={true}
       rounded={true}
     >
-      <Navbar.Brand href="#">
-        <img src={logo_light} className="h-9 sm:h-9" alt="Mr Tech Expert" />
+      <Navbar.Brand>
+        <div className="flex items-center">
+          <img src={logo_light} className="h-9" alt="Mr Tech Expert" />
+          <p className=" text-orange-500 ml-2 uppercase font-black text-4xl">
+            Mr Tech Expert
+          </p>
+        </div>
       </Navbar.Brand>
       <div className="flex md:order-2">
         <>
@@ -36,30 +41,31 @@ const NavBar = () => {
               label={
                 <Avatar
                   alt="Profile pic"
-                  img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                  img={user?.photoURL}
                   rounded={true}
-                  title="Bonnie Green"
+                  title="User name"
                 />
               }
             >
               <Dropdown.Header>
-                <span className="block text-sm">Bonnie Green</span>
-                <span className="block truncate text-sm font-medium">
-                  name@flowbite.com
-                </span>
+                <Avatar
+                  alt="Profile pic"
+                  img={user?.photoURL}
+                  rounded={true}
+                  title="User name"
+                />
+                <span className="block text-sm">{user?.displayName}</span>
               </Dropdown.Header>
-              <Dropdown.Item>Dashboard</Dropdown.Item>
-              <Dropdown.Item>Settings</Dropdown.Item>
-              <Dropdown.Item>Earnings</Dropdown.Item>
+              <Dropdown.Item>{user?.email}</Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item onClick={handleLogOut}>Sign out</Dropdown.Item>
             </Dropdown>
           ) : (
             <>
-              <Button className="mr-2">
+              <Button className="mr-2 bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black">
                 <Link to="/login">Login</Link>
               </Button>
-              <Button>
+              <Button className="bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black">
                 <Link to="/signup">Register</Link>
               </Button>
             </>
@@ -68,19 +74,19 @@ const NavBar = () => {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <Navbar className=" bg-opacity-60 dark:bg-slate-300 dark:bg-opacity-60 dark:hover:bg-opacity-90 rounded-lg hover:bg-opacity-100">
+        <Navbar className=" bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black">
           <Link to="/">Home</Link>
         </Navbar>
-        <Navbar className=" bg-opacity-60 dark:bg-slate-300 dark:bg-opacity-60 dark:hover:bg-opacity-90 rounded-lg hover:bg-opacity-100">
+        <Navbar className=" bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black">
           <Link to="/course">Courses</Link>
         </Navbar>
-        <Navbar className=" bg-opacity-60 dark:bg-slate-300 dark:bg-opacity-60 dark:hover:bg-opacity-90 rounded-lg hover:bg-opacity-100">
+        <Navbar className="bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black">
           <Link to="/blogs">Blogs</Link>
         </Navbar>
-        <Navbar className=" bg-opacity-60 dark:bg-slate-300 dark:bg-opacity-60 dark:hover:bg-opacity-90 rounded-lg hover:bg-opacity-100">
+        <Navbar className="bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black">
           <Link to="/about">About</Link>
         </Navbar>
-        <Navbar className=" bg-opacity-60 dark:bg-slate-300 dark:bg-opacity-60 dark:hover:bg-opacity-90 rounded-lg hover:bg-opacity-100">
+        <Navbar className="bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black">
           <Link to="/contact">Contact</Link>
         </Navbar>
         <Flowbite>

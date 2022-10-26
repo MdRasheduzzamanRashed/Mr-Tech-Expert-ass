@@ -17,14 +17,14 @@ const Courses = () => {
         Explore The Courses
       </h1>
       <div className="grid grid-cols-4 ml-4">
-        <div className=" bg-opacity-20 mt-16 py-5">
+        <div className=" bg-opacity-20 mt-16">
           <div className="dark:bg-slate-200 bg-slate-500 bg-opacity-25 py-2 rounded-t-lg">
             <h2 className="text-center text-slate-800 text-3xl">Courses</h2>
           </div>
           <div className="text-center">
             {coursesTopics.map((topic) => (
               <p
-                className="py-2 hover:bg-slate-700 dark:hover:bg-slate-50 hover:bg-opacity-20"
+                className="py-2 hover:bg-slate-700 dark:hover:bg-slate-50 dark:hover:bg-opacity-25  hover:bg-opacity-20"
                 key={topic.id}
               >
                 <Link to={`/course/${topic.id}`}>{topic.name}</Link>

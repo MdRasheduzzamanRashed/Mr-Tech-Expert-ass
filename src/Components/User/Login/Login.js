@@ -3,10 +3,12 @@ import React, { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./../../../context/AuthProvider/AuthProvider";
 import { toast } from "react-hot-toast";
+import { FaGoogle, FaGithub } from "react-icons/fa";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
   const [error, setError] = useState();
-  const { signIn, setLoading } = useContext(AuthContext);
+  const { signIn, setLoading, providerLogin } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -40,9 +42,18 @@ const Login = () => {
       });
   };
 
+  const googleProvider = new GoogleAuthProvider();
+  const handleGoogleSignIn = () => {
+    providerLogin(googleProvider)
+      .then((r) => {})
+      .catch((e) => console.error(e));
+  };
+
   return (
-    <div className="w-1/2 mx-auto mb-8">
-      <h3 className="text-center text-2xl font-medium my-5">Please login</h3>
+    <div className="w-1/2 mx-auto mb-8 h-screen mt-20">
+      <h3 className="text-center dark:text-orange-500 text-3xl font-medium my-8">
+        Please login
+      </h3>
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <div>
           <div className="mb-2 block">
@@ -60,6 +71,14 @@ const Login = () => {
             <Label value="Your password" />
           </div>
           <TextInput name="password" type="password" required={true} />
+        </div>
+        <div className="flex gap-2 items-center justify-center">
+          <Button color="gray" onClick={handleGoogleSignIn}>
+            Login with <FaGoogle className="ml-2 text-2xl"></FaGoogle>
+          </Button>
+          <Button color="gray">
+            Login with <FaGithub className="ml-2 text-2xl"></FaGithub>
+          </Button>
         </div>
         <div>
           <Label className="text-red">{error}</Label>
