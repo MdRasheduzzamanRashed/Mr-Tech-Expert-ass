@@ -25,9 +25,9 @@ const NavBar = () => {
       rounded={true}
     >
       <Navbar.Brand>
-        <div className="flex items-center">
+        <div className="flex flex-col md:flex-row items-center">
           <img src={logo_light} className="h-9" alt="Mr Tech Expert" />
-          <p className=" text-orange-500 ml-2 uppercase font-black text-4xl">
+          <p className=" text-orange-500 ml-2 uppercase font-black md:text-3xl lg:text-4xl">
             Mr Tech Expert
           </p>
         </div>
@@ -74,16 +74,19 @@ const NavBar = () => {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <Navbar className=" bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black">
+        <Navbar className="bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black mt-1 md:mt-0">
           <Link to="/">Home</Link>
         </Navbar>
-        <Navbar className=" bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black">
+        <Navbar className="bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black mt-1 md:mt-0">
           <Link to="/course">Courses</Link>
         </Navbar>
-        <Navbar className="bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black">
+        <Navbar className="bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black mt-1 md:mt-0">
+          <Link to="/my-course">My Courses</Link>
+        </Navbar>
+        <Navbar className="bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black mt-1 md:mt-0">
           <Link to="/blogs">Blogs</Link>
         </Navbar>
-        <Navbar className="bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black">
+        <Navbar className="bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black mt-1 md:mt-0">
           <Link to="/about">About</Link>
         </Navbar>
 
