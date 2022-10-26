@@ -4,11 +4,12 @@ import Home from "./../Components/Pages/Home/Home";
 import Courses from "./../Components/Pages/Courses/Courses";
 import About from "./../Components/Pages/About/About";
 import Blogs from "./../Components/Pages/Blogs/Blogs";
-import Login from './../Components/User/Login/Login';
-import Register from './../Components/User/Register/Register';
-import CourseDetails from './../Components/Pages/Courses/CourseDetails';
-import Enrollment from './../Components/Pages/Enrollment/Enrollment';
-import PrivateRoute from './PrivateRoute';
+import Login from "./../Components/User/Login/Login";
+import Register from "./../Components/User/Register/Register";
+import CourseDetails from "./../Components/Pages/Courses/CourseDetails";
+import Enrollment from "./../Components/Pages/Enrollment/Enrollment";
+import PrivateRoute from "./PrivateRoute";
+import TermsAndConditions from "./../Components/Pages/TermsAndContions/TermsAndConditions";
 
 export const routes = createBrowserRouter([
   {
@@ -35,7 +36,9 @@ export const routes = createBrowserRouter([
         element: <Blogs></Blogs>,
       },
       {
-        path: "/enrollment",
+        path: "/enrollment/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/course/${params.id}`),
         element: (
           <PrivateRoute>
             <Enrollment></Enrollment>
@@ -53,6 +56,10 @@ export const routes = createBrowserRouter([
       {
         path: "/signup",
         element: <Register></Register>,
+      },
+      {
+        path: "/terms",
+        element: <TermsAndConditions></TermsAndConditions>,
       },
     ],
   },

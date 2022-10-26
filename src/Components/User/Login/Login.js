@@ -45,7 +45,17 @@ const Login = () => {
   const googleProvider = new GoogleAuthProvider();
   const handleGoogleSignIn = () => {
     providerLogin(googleProvider)
-      .then((r) => {})
+      .then((r) => {
+        const user = r.user;
+        setError("");
+        if (user.emailVerified) {
+          navigate(from, { replace: true });
+        } else {
+          toast.error(
+            "Your email is not verified, Please verified email first."
+          );
+        }
+      })
       .catch((e) => console.error(e));
   };
 

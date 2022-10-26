@@ -12,8 +12,8 @@ const CourseDetails = () => {
     image_url,
     rating,
     syllabus,
-    following_topics,
     duration,
+    topic_id,
   } = course;
   return (
     <div className="w-3/4 mx-auto dark:text-white py-10">
@@ -58,20 +58,26 @@ const CourseDetails = () => {
           </div>
           <div>{details}</div>
           <div>
-            <h3 className="bg-orange-500 text-2xl mt-4 mb-3 p-2 rounded">{syllabus.a.title}</h3>
+            <h3 className="bg-orange-500 text-2xl mt-4 mb-3 p-2 rounded">
+              {syllabus.a.title}
+            </h3>
             <p>{syllabus.a.info}</p>
           </div>
           <div>
-            <h3 className="bg-orange-500 text-2xl mt-4 mb-3 p-2 rounded">{syllabus.b.title}</h3>
+            <h3 className="bg-orange-500 text-2xl mt-4 mb-3 p-2 rounded">
+              {syllabus.b.title}
+            </h3>
             <p>{syllabus.b.info}</p>
           </div>
           <div>
-            <h3 className="bg-orange-500 text-2xl mt-4 mb-3 p-2 rounded">{syllabus.c.title}</h3>
+            <h3 className="bg-orange-500 text-2xl mt-4 mb-3 p-2 rounded">
+              {syllabus.c.title}
+            </h3>
             <p>{syllabus.c.info}</p>
           </div>
           <div className="flex items-center justify-between">
             <Link
-              to=""
+              to={`/enrollment/${topic_id}`}
               className="rounded-lg bg-blue-700 px-5 mt-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Enroll Now

@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
-import { Label, TextInput, Button } from "flowbite-react";
+import { Label, TextInput, Button, Checkbox } from "flowbite-react";
 import { toast } from "react-hot-toast";
 import { AuthContext } from "./../../../context/AuthProvider/AuthProvider";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const [error, setError] = useState();
@@ -90,10 +91,21 @@ const Register = () => {
           </div>
           <TextInput name="password" type="password" required={true} />
         </div>
+        <div className="flex items-center gap-2">
+          <Checkbox type="checkbox" onClick={handleAccepted} />
+          <Label htmlFor="remember">
+            Accept
+            <Link to="/terms" className="ml-1">
+              Terms and Conditions
+            </Link>
+          </Label>
+        </div>
         <div>
           <Label className="text-red">{error}</Label>
         </div>
-        <Button type="submit">Submit</Button>
+        <Button type="submit" disabled={!accepted}>
+          Submit
+        </Button>
       </form>
     </div>
   );
