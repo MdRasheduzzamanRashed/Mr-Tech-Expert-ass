@@ -23,13 +23,13 @@ export const routes = createBrowserRouter([
       {
         path: "/course",
         loader: ({ params }) =>
-          fetch("https://mr-tech-expert.vercel.app/course-topics"),
+          fetch("https://b610-lerning-platform-server-side-md-rasheduzzaman-rashed.vercel.app/course-topics"),
         element: <Courses></Courses>,
       },
       {
         path: "/course/:id",
         loader: ({ params }) =>
-          fetch(`https://mr-tech-expert.vercel.app/course/${params.id}`),
+          fetch(`https://b610-lerning-platform-server-side-md-rasheduzzaman-rashed.vercel.app/course/${params.id}`),
         element: <CourseDetails></CourseDetails>,
       },
       {
@@ -39,7 +39,7 @@ export const routes = createBrowserRouter([
       {
         path: "/enrollment/:id",
         loader: ({ params }) =>
-          fetch(`https://mr-tech-expert.vercel.app/course/${params.id}`),
+          fetch(`https://b610-lerning-platform-server-side-md-rasheduzzaman-rashed.vercel.app/course/${params.id}`),
         element: (
           <PrivateRoute>
             <Enrollment></Enrollment>

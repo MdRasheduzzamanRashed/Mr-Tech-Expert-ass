@@ -7,7 +7,9 @@ const Courses = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    fetch("https://mr-tech-expert.vercel.app/course")
+    fetch(
+      "https://b610-lerning-platform-server-side-md-rasheduzzaman-rashed.vercel.app/course"
+    )
       .then((res) => res.json())
       .then((data) => setCourses(data));
   }, []);
@@ -16,7 +18,7 @@ const Courses = () => {
       <h1 className="text-center text-4xl font-medium uppercase py-4">
         Explore The Courses
       </h1>
-      <div className="grid grid-cols-4 ml-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ml-4">
         <div className=" bg-opacity-20 mt-16">
           <div className="dark:bg-slate-200 bg-slate-500 bg-opacity-25 py-2 rounded-t-lg">
             <h2 className="text-center text-slate-800 text-3xl">Courses</h2>
@@ -33,8 +35,8 @@ const Courses = () => {
           </div>
         </div>
 
-        <div className="col-span-3 col-start-2 mx-4 mt-16">
-          <div className="grid grid-cols-3 gap-3">
+        <div className="md:col-span-2 lg:col-span-3 mx-4 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {courses.map((course) => (
               <Course key={course._id} course={course}></Course>
             ))}

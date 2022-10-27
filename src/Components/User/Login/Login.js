@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./../../../context/AuthProvider/AuthProvider";
 import { toast } from "react-hot-toast";
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
   const [error, setError] = useState();
@@ -43,6 +43,19 @@ const Login = () => {
   };
 
   const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
+
+  const handleGithubSignIn = () => {
+    providerLogin(githubProvider)
+      .then((r) => {
+        const user = r.user;
+        console.log(user);
+        setError("");
+        navigate(from, { replace: true });
+      })
+      .catch((e) => console.error(e));
+  };
+
   const handleGoogleSignIn = () => {
     providerLogin(googleProvider)
       .then((r) => {
@@ -86,7 +99,7 @@ const Login = () => {
           <Button color="gray" onClick={handleGoogleSignIn}>
             Login with <FaGoogle className="ml-2 text-2xl"></FaGoogle>
           </Button>
-          <Button color="gray">
+          <Button color="gray" onClick={handleGithubSignIn}>
             Login with <FaGithub className="ml-2 text-2xl"></FaGithub>
           </Button>
         </div>

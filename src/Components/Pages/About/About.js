@@ -17,7 +17,7 @@ const About = () => {
           Full Stack Web Developer
         </span>
         <div>
-          <p className="text-center">
+          <p className="text-center dark:text-white">
             I am an ordinary Bangladeshi. Eat and sleep. I love to teach people
             but I don't want to be a teacher. <br /> If anyone need help i try
             my best to help him/them. In this site I am trying to make a web

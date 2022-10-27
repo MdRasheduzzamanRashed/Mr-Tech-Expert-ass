@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const Blogs = () => {
   return (
-    <div className="h-screen w-3/4 mx-auto mt-20">
+    <div className="w-3/4 mx-auto mt-20">
       <Timeline>
         <Timeline.Item>
           <Timeline.Point />
@@ -102,8 +102,30 @@ const Blogs = () => {
             <Timeline.Time>September 2022</Timeline.Time>
             <Timeline.Title>What is Node? How does Node work?</Timeline.Title>
             <Timeline.Body>
-              Get started with dozens of web components and interactive elements
-              built on top of Tailwind CSS.
+              Node.js is an open-source, cross-platform, back-end JavaScript
+              runtime environment that runs on a JavaScript Engine (i.e. V8
+              engine) and executes JavaScript code outside a web browser, which
+              was designed to build scalable network applications. Node.js lets
+              developers use JavaScript to write command line tools and for
+              server-side scripting—running scripts server-side to produce
+              dynamic web page content before the page is sent to the user's web
+              browser. Consequently, Node.js represents a "JavaScript
+              everywhere" paradigm, unifying web-application development around
+              a single programming language, rather than different languages for
+              server-side and client-side scripts. Node.js has an event-driven
+              architecture capable of asynchronous I/O. These design choices aim
+              to optimize throughput and scalability in web applications with
+              many input/output operations, as well as for real-time Web
+              applications (e.g., real-time communication programs and browser
+              games). The Node.js distributed development project was previously
+              governed by the Node.js Foundation, and has now merged with the JS
+              Foundation to form the OpenJS Foundation, which is facilitated by
+              the Linux Foundation's Collaborative Projects program.
+              <br /> <br />
+              <img
+                src="https://miro.medium.com/max/632/1*xsQYYYvG-07C3lAYcTvuRA.png"
+                alt=""
+              />
             </Timeline.Body>
           </Timeline.Content>
         </Timeline.Item>
