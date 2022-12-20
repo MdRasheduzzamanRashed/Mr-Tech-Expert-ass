@@ -62,12 +62,12 @@ const NavBar = () => {
             </Dropdown>
           ) : (
             <>
-              <Button className="mr-2 bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black">
+              <Navbar className="mr-2 bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black">
                 <Link to="/login">Login</Link>
-              </Button>
-              <Button className="bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black">
+              </Navbar>
+              <Navbar className="bg-opacity-60 rounded-lg hover:bg-opacity-100 dark:bg-white dark:bg-opacity-40 dark:hover:bg-opacity-100 dark:text-white dark:hover:text-black">
                 <Link to="/signup">Register</Link>
-              </Button>
+              </Navbar>
             </>
           )}
         </>
